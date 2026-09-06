@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="indifferent.Core/indifferent.Core.csproj" />
+  <Project Path="indifferent.Desktop/indifferent.Desktop.csproj" />
+</Solution>

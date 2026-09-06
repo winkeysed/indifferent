@@ -1,0 +1,40 @@
+<Window x:Class="indifferent.Desktop.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Настройки" Width="520" Height="440" WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize" Background="{DynamicResource BgPrimary}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock Text="Тема" Foreground="{DynamicResource TextSecondary}" FontSize="12" Margin="0,0,0,6"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
+                <RadioButton x:Name="ThLight" Content="Светлая" Foreground="{DynamicResource TextPrimary}" Margin="0,0,16,0"/>
+                <RadioButton x:Name="ThDark" Content="Тёмная" Foreground="{DynamicResource TextPrimary}"/>
+            </StackPanel>
+
+            <TextBlock Text="Размер шрифта текста песен" Foreground="{DynamicResource TextSecondary}" FontSize="12" Margin="0,0,0,6"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
+                <Slider x:Name="FsRange" Width="300" Minimum="16" Maximum="48" TickFrequency="1" IsSnapToTickEnabled="True" VerticalAlignment="Center"/>
+                <TextBlock x:Name="FsVal" Text="28" Foreground="{DynamicResource TextPrimary}" Margin="12,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <CheckBox x:Name="ShiftChar" Content="Сдвигать персонажа в центр при отсутствии текста" Foreground="{DynamicResource TextPrimary}" Margin="0,0,0,8"/>
+            <CheckBox x:Name="GifOn" Content="Показывать GIF-талисмана" Foreground="{DynamicResource TextPrimary}" Margin="0,0,0,8"/>
+            <CheckBox x:Name="AnimOn" Content="Включить анимации интерфейса" Foreground="{DynamicResource TextPrimary}" Margin="0,0,0,16"/>
+
+            <TextBlock Text="Путь к библиотеке" Foreground="{DynamicResource TextSecondary}" FontSize="12" Margin="0,0,0,6"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="LibPath" Width="360" Padding="6" Background="Transparent" Foreground="{DynamicResource TextPrimary}" BorderBrush="{DynamicResource BorderSubtle}"/>
+                <Button x:Name="Browse" Content="Обзор" Margin="8,0,0,0" Padding="10,4"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+            <Button x:Name="SaveBtn" Content="Сохранить" Padding="20,8" Background="{DynamicResource Accent}" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Window>
